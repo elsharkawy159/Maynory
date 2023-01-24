@@ -55,7 +55,7 @@ function printQuote() {
 
 
 let button = document.getElementById('button');
-let disableTime = 10 * 60 * 10;
+let disableTime = 10 * 60 * 13;
 button.addEventListener('click', () => {
   button.disabled = true;
   setTimeout(() => {
@@ -68,7 +68,7 @@ button.addEventListener('click', () => {
 
 function checkPassword() {
     var password = document.getElementById("password").value;
-    if (password == "150") {
+    if (password == "1") {
         document.getElementById("login").style.display = "none";
       }
       else
@@ -77,8 +77,12 @@ function checkPassword() {
       }
   }
 
+//Copy Button
 
-
+  function copyElement() {
+    var copyText = document.getElementById("quote").innerHTML;
+    navigator.clipboard.writeText(copyText);
+}
 
     // disable right click
     document.addEventListener('contextmenu', event => event.preventDefault());
@@ -105,8 +109,3 @@ function checkPassword() {
             return false;
         }
     }
-
-
-
-
-    
