@@ -10,7 +10,7 @@ h2 {
 p {
     font-family: 'Solitreo', cursive;
     /* background-color: hsla(0, 0%, 100%, 0.75); */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 0, 0, 0.28));
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 58, 58, 0.75));
     transition: all 0.7s ease;
     letter-spacing: 1px;
     cursor: default;
@@ -28,7 +28,7 @@ p:hover {
     height: 100vh;
 }
 
-button {
+.msgbtn {
     background-image: linear-gradient(to right, rgba(128, 0, 0, 0.151), #ff4848);
 
 }
@@ -53,4 +53,28 @@ button {
 .form-control:focus{
     border-color: #ff4848;
     box-shadow: 0px 0px 10px #ff48488f;
+}
+
+.copybtn {
+    background-color: rgba(39, 39, 39, 0.415);
+    border: 0;
+}
+.copybtn:hover {
+    background-color: rgba(39, 39, 39, 0.515);
+}
+.copybtn:focus{
+    background-color: rgba(39, 39, 39, 0.615) !important;
+}
+@media screen and (max-width: 765px) {
+    .bg {
+        background-image: url(../img/bg2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+        height: 100vh;
+    }
+    .copybtn{
+        display: block !important;
+    }
 }
