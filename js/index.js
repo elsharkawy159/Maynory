@@ -68,7 +68,7 @@ button.addEventListener('click', () => {
 
 function checkPassword() {
     var password = document.getElementById("password").value;
-    if (password == "15") {
+    if (password == "150") {
         document.getElementById("login").style.display = "none";
       }
       else
