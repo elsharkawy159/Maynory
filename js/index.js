@@ -93,8 +93,8 @@ function checkPassword() {
 
 
 
-//disable right click
 
+    // disable right click
     document.addEventListener('contextmenu', event => event.preventDefault());
  
     document.onkeydown = function (e) {
