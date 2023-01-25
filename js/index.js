@@ -44,14 +44,20 @@ const userName = [
     '"3omry, ',
 ]
 
+var count = 0;
+
 function printQuote() {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = Math.floor(Math.random() * userName.length);
-
+    count++;
     console.log(quotes[randomNumber]);   // Prints quote to console for testing purposes
 
     document.getElementById("quote").innerHTML = "❤️" + userName[randomName] + quotes[randomNumber] + "❤️";   // Prints quote to HTML element with id="quote"
+
+    document.getElementById("count").innerHTML = count;
+    console.log(count)
 }
+
 
 
 let button = document.getElementById('button');
@@ -64,11 +70,12 @@ button.addEventListener('click', () => {
 });
 
 
+
 // Password Checker
 
 function checkPassword() {
     var password = document.getElementById("password").value;
-    if (password == "01813") {
+    if (password == "1") {
         document.getElementById("login").style.display = "none";
       }
       else
@@ -84,7 +91,10 @@ function checkPassword() {
     navigator.clipboard.writeText(copyText);
 }
 
-    // disable right click
+
+
+
+    disable right click
     document.addEventListener('contextmenu', event => event.preventDefault());
  
     document.onkeydown = function (e) {
