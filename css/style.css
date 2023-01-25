@@ -44,7 +44,7 @@ p:hover {
     width: 100%;
     height: 100%;
     display: block;
-    transition: all 1s ease;
+    z-index: 1000;
 }
 .incorrect {
     display: none;
@@ -70,9 +70,11 @@ p:hover {
         background-image: url(../img/bg2.jpg);
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center center;
         background-attachment: fixed;
         position: relative;
         height: 100vh;
+        
     }
     .copybtn{
         display: block !important;
