@@ -132,6 +132,7 @@ window.onload = function() {
     document.getElementById('total').innerHTML = number + Date();
 }
 
+
 //Disabled Button
 let myButton = document.getElementById("button");
 let disabledTime = localStorage.getItem("disabledTime");
@@ -143,7 +144,7 @@ myButton.addEventListener("click", function() {
     myButton.disabled = true; 
     let disableDuration = 900 * 1000; // 900 seconds = 15 Mins 
     let disabledTime = new Date().getTime() + disableDuration; 
-    localStorage.setItem("disabledTsime", disabledTime); 
+    localStorage.setItem("disabledTime", disabledTime); 
 
     setTimeout(function() {   // enable button after 900 seconds = 15 Mins
         myButton.disabled = false;   // enable button  
