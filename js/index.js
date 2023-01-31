@@ -74,7 +74,7 @@ const quotes = [
 'I am In love with your style."', 
 'I love the way you talk."', 
 //Love you
-'Ti amo tanto.❤️❤️"', //Maynor
+'Ti amo tanto.❤️"', //Maynor
 'I need you to know that I adore you.❤️"'
 
 ];
@@ -117,14 +117,14 @@ function printQuote() {
 
     console.log(quotes[randomNumber]);   // Prints quote to console for testing purposes
 
-    document.getElementById("quote").innerHTML = userName[randomName] + quotes[randomNumber] + "❤️";   // Prints quote to HTML element with id="quote"
+    document.getElementById("quote").innerHTML = userName[randomName] + quotes[randomNumber];   // Prints quote to HTML element with id="quote"
     
     let number = localStorage.getItem('number') || 0;
     number++;
     localStorage.setItem('number', number);
 
-    document.getElementById('number').innerHTML = number + " || " + Date();
-
+    document.getElementById('number').innerHTML = number;
+    console.log(number + " || " + Date())
 }
 window.onload = function() {
     let number = localStorage.getItem('number') || 0;
@@ -132,17 +132,26 @@ window.onload = function() {
     document.getElementById('total').innerHTML = number + Date();
 }
 
+//Disabled Button
+let myButton = document.getElementById("button");
+let disabledTime = localStorage.getItem("disabledTime");
+let currentTime = new Date().getTime(); 
+if (disabledTime && currentTime < disabledTime) { 
+    myButton.disabled = true; 
+} 
+myButton.addEventListener("click", function() { 
+    myButton.disabled = true; 
+    let disableDuration = 900 * 1000; // 900 seconds = 15 Mins 
+    let disabledTime = new Date().getTime() + disableDuration; 
+    localStorage.setItem("disabledTsime", disabledTime); 
 
-let button = document.getElementById('button');
-let disableTime = 10 * 60 * 60;
-button.addEventListener('click', () => {
-button.disabled = true;
-localStorage.setItem('button', button);
+    setTimeout(function() {   // enable button after 900 seconds = 15 Mins
+        myButton.disabled = false;   // enable button  
+        localStorage.removeItem("disabledTime");   // remove item from storage  
 
-setTimeout(() => {
-    button.disabled = false;
-}, disableTime);
-});
+    }, disableDuration);   // 900 seconds = 15 Mins  
+
+ });
 
 // dark mode
 const selector = document.getElementById('theme-selector');
@@ -157,10 +166,9 @@ const selector = document.getElementById('theme-selector');
 
 
 // Password Checker
-
 function checkPassword() {
     var password = document.getElementById("password").value;
-    if (password == "2") {
+    if (password == "3omry") {
         document.getElementById("login").style.display = "none";
     }
     else
@@ -204,6 +212,3 @@ function copyElement() {
     //         return false;
     //     }
     // }
-
-
-    
