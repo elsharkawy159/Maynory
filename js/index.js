@@ -123,7 +123,7 @@ const selector = document.getElementById('theme-selector');
 
 function checkPassword() {
     var password = document.getElementById("password").value;
-    if (password == "1") {
+    if (password == "2") {
         document.getElementById("login").style.display = "none";
     }
     else
