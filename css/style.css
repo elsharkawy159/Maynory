@@ -64,7 +64,7 @@ p:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: block;
     z-index: 1000;
 }
@@ -87,16 +87,31 @@ p:hover {
 .copybtn:focus{
     background-color: rgba(39, 39, 39, 0.615) !important;
 }
+
+.carousel {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+.carousel .carousel-inner img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    height: 100vh;
+    background-position-y: 280px;
+}
+
 @media screen and (max-width: 765px) {
-    .bg {
-        background-image: url(../img/bg2.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-        position: relative;
-        height: 100vh;
-        
+    .carousel {
+        display: block;
     }
     .copybtn{
         display: block !important;
@@ -107,4 +122,8 @@ p:hover {
     .msgbtn {
         background-color: #ff484869;
     }
+    .bg {
+        height: 0px;
+    }
+
 }
