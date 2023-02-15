@@ -142,7 +142,7 @@ if (disabledTime && currentTime < disabledTime) {
 } 
 myButton.addEventListener("click", function() { 
     myButton.disabled = true; 
-    let disableDuration = 600 * 1000; // 900 seconds = 15 Mins 
+    let disableDuration = 900 * 1000; // 900 seconds = 15 Mins 
     let disabledTime = new Date().getTime() + disableDuration; 
     localStorage.setItem("disabledTime", disabledTime); 
 
@@ -191,27 +191,27 @@ function copyElement() {
     // disable right click >>>>>>
 
 
-    // document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // document.onkeydown = function (e) {
+    document.onkeydown = function (e) {
 
-    //     // disable F12 key
-    //     if(e.keyCode == 123) {
-    //         return false;
-    //     }
+        // disable F12 key
+        if(e.keyCode == 123) {
+            return false;
+        }
 
-    //     // disable I key
-    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
-    //         return false;
-    //     }
+        // disable I key
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+            return false;
+        }
 
-    //     // disable J key
-    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-    //         return false;
-    //     }
+        // disable J key
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+            return false;
+        }
 
-    //     // disable U key
-    //     if(e.ctrlKey && e.keyCode == 85) {
-    //         return false;
-    //     }
-    // }
+        // disable U key
+        if(e.ctrlKey && e.keyCode == 85) {
+            return false;
+        }
+    }
