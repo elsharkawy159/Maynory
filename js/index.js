@@ -143,12 +143,8 @@ myButton.addEventListener("click", function(e) {
     let disableDuration = 900 * 1000; // 900 seconds = 15 Mins 
     let disabledTime = new Date().getTime() + disableDuration; 
     localStorage.setItem("disabledTime", disabledTime); 
-
-    setTimeout(function() {   // enable button after 900 seconds = 15 Mins
-        myButton.disabled = false;   // enable button  
-        localStorage.removeItem("disabledTime");   // remove item from storage  
     
-        // Send data to mail
+           // Send data to mail
             emailjs.send("service_2tbrcks","template_0v18a3s",{
             to_name: "Omar",
             from_name: "Maynory",
@@ -156,6 +152,10 @@ myButton.addEventListener("click", function(e) {
             date: `I've Clicked on the button at | ${Date()}`,
             qoute: `The Qoute I got is:  ${document.getElementById("quote").innerHTML}`,
             });
+    
+    setTimeout(function() {   // enable button after 900 seconds = 15 Mins
+        myButton.disabled = false;   // enable button  
+        localStorage.removeItem("disabledTime");   // remove item from storage  
         
         
     }, disableDuration);   // 900 seconds = 15 Mins  
@@ -195,27 +195,27 @@ function copyElement() {
 
     // disable right click >>>>>>
 
-    document.addEventListener('contextmenu', event => event.preventDefault());
+//     document.addEventListener('contextmenu', event => event.preventDefault());
 
-    document.onkeydown = function (e) {
+//     document.onkeydown = function (e) {
 
-        // disable F12 key
-        if(e.keyCode == 123) {
-            return false;
-        }
+//         // disable F12 key
+//         if(e.keyCode == 123) {
+//             return false;
+//         }
 
-        // disable I key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
-            return false;
-        }
+//         // disable I key
+//         if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+//             return false;
+//         }
 
-        // disable J key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-            return false;
-        }
+//         // disable J key
+//         if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+//             return false;
+//         }
 
-        // disable U key
-        if(e.ctrlKey && e.keyCode == 85) {
-            return false;
-        }
-    }
+//         // disable U key
+//         if(e.ctrlKey && e.keyCode == 85) {
+//             return false;
+//         }
+//     }
