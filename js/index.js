@@ -115,8 +115,6 @@ function printQuote() {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = Math.floor(Math.random() * userName.length);
 
-    console.log(quotes[randomNumber]);   // Prints quote to console for testing purposes
-
     document.getElementById("quote").innerHTML = userName[randomName] + quotes[randomNumber];   // Prints quote to HTML element with id="quote"
     
     let number = localStorage.getItem('number') || 0;
@@ -140,7 +138,7 @@ let currentTime = new Date().getTime();
 if (disabledTime && currentTime < disabledTime) { 
     myButton.disabled = true; 
 } 
-myButton.addEventListener("click", function() { 
+myButton.addEventListener("click", function(e) { 
     myButton.disabled = true; 
     let disableDuration = 900 * 1000; // 900 seconds = 15 Mins 
     let disabledTime = new Date().getTime() + disableDuration; 
@@ -149,7 +147,17 @@ myButton.addEventListener("click", function() {
     setTimeout(function() {   // enable button after 900 seconds = 15 Mins
         myButton.disabled = false;   // enable button  
         localStorage.removeItem("disabledTime");   // remove item from storage  
-
+    
+        // Send data to mail
+            emailjs.send("service_2tbrcks","template_0v18a3s",{
+            to_name: "Omar",
+            from_name: "Maynory",
+            message: "I Love You 3omry",
+            date: `I've Clicked on the button at | ${Date()}`,
+            qoute: `The Qoute I got is:  ${document.getElementById("quote").innerHTML}`,
+            });
+        
+        
     }, disableDuration);   // 900 seconds = 15 Mins  
 
  });
@@ -185,11 +193,7 @@ function copyElement() {
     navigator.clipboard.writeText(copyText);
 }
 
-
-
-
     // disable right click >>>>>>
-
 
     document.addEventListener('contextmenu', event => event.preventDefault());
 
