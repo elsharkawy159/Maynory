@@ -1,4 +1,4 @@
-
+console.log("Pushed");
 const quotes = [
 'Love You so much My sweety Strawberry.❤️"',
 'You are the light that guides me through life\'s darkest moments.❤️"',
