@@ -65,6 +65,10 @@ const quotes = [
 'When you look at me, when you think of me, I am in paradise."',
 'I wish I could turn back the clock. I\'d find you sooner and love you longer."',
 'It was love at first sight, at ever and ever sight."',
+'I will never forget you, until my last breath."',
+'You are the first one in the world you gave me the happiness."',
+'From my Deep heart, I love you and miss your smile."',
+'I need you to know that you are mine, and i\'m yours."',
 // In love with..
 'I am In love with your eyes."', 
 'I am In love with your smile.❤️"', 
@@ -81,6 +85,7 @@ const quotes = [
 
 const userName = [
     '"Maynory❤️, ',
+    '"Panda🐼, ',
     '"My Soulmate, ',
     '"Sweety, ',
     '"Strawberry🍓, ',
@@ -110,6 +115,23 @@ const userName = [
     '"3omry❤️, ',
 ]
 
+let number = document.querySelector("#number")
+
+let daysList = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var currentdate = new Date(); 
+var day = daysList[currentdate.getDay()];
+var datetime =  day + " | "
+                + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " | "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
+window.onload = function() {
+    let number = localStorage.getItem('number') || 0;
+    document.querySelector("#password").focus()
+}
 
 function printQuote() {
     let randomNumber = Math.floor(Math.random() * quotes.length);
@@ -122,24 +144,17 @@ function printQuote() {
     localStorage.setItem('number', number);
 
     document.getElementById('number').innerHTML = number;
-    console.log(number + " || " + Date())
     
        // Send data to mail
     emailjs.send("service_2tbrcks","template_0v18a3s",{
     to_name: "Omar",
     from_name: "Maynory",
     message: "I Love You 3omry",
-    date: `I've Clicked on the button at | ${Date()}`,
-    qoute: `Qoute Number ${number.innerHTML} I got is:  ${document.getElementById("quote").innerHTML}`,
+    date: `I Clicked on the button on >> ${datetime}`,
+    qoute: `Qoute Number (${number}) is:  ${document.getElementById("quote").innerHTML}`,
     });
 }
-console.log(number.innerHTML);
 
-window.onload = function() {
-    let number = localStorage.getItem('number') || 0;
-
-    document.getElementById('total').innerHTML = number + Date();
-}
 
 
 //Disabled Button
