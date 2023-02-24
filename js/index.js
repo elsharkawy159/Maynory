@@ -133,6 +133,8 @@ function printQuote() {
     qoute: `Qoute Number ${number.innerHTML} I got is:  ${document.getElementById("quote").innerHTML}`,
     });
 }
+console.log(number.innerHTML);
+
 window.onload = function() {
     let number = localStorage.getItem('number') || 0;
 
