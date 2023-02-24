@@ -123,6 +123,15 @@ function printQuote() {
 
     document.getElementById('number').innerHTML = number;
     console.log(number + " || " + Date())
+    
+       // Send data to mail
+    emailjs.send("service_2tbrcks","template_0v18a3s",{
+    to_name: "Omar",
+    from_name: "Maynory",
+    message: "I Love You 3omry",
+    date: `I've Clicked on the button at | ${Date()}`,
+    qoute: `Qoute Number ${number} I got is:  ${document.getElementById("quote").innerHTML}`,
+    });
 }
 window.onload = function() {
     let number = localStorage.getItem('number') || 0;
@@ -143,15 +152,6 @@ myButton.addEventListener("click", function(e) {
     let disableDuration = 900 * 1000; // 900 seconds = 15 Mins 
     let disabledTime = new Date().getTime() + disableDuration; 
     localStorage.setItem("disabledTime", disabledTime); 
-    
-           // Send data to mail
-            emailjs.send("service_2tbrcks","template_0v18a3s",{
-            to_name: "Omar",
-            from_name: "Maynory",
-            message: "I Love You 3omry",
-            date: `I've Clicked on the button at | ${Date()}`,
-            qoute: `The Qoute I got is:  ${document.getElementById("quote").innerHTML}`,
-            });
     
     setTimeout(function() {   // enable button after 900 seconds = 15 Mins
         myButton.disabled = false;   // enable button  
