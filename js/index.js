@@ -130,7 +130,7 @@ function printQuote() {
     from_name: "Maynory",
     message: "I Love You 3omry",
     date: `I've Clicked on the button at | ${Date()}`,
-    qoute: `Qoute Number ${number} I got is:  ${document.getElementById("quote").innerHTML}`,
+    qoute: `Qoute Number ${number.innerHTML} I got is:  ${document.getElementById("quote").innerHTML}`,
     });
 }
 window.onload = function() {
