@@ -166,7 +166,7 @@ if (disabledTime && currentTime < disabledTime) {
 } 
 myButton.addEventListener("click", function(e) { 
     myButton.disabled = true; 
-    let disableDuration = 0 * 1000; // 900 seconds = 15 Mins 
+    let disableDuration = 900 * 1000; // 900 seconds = 15 Mins 
     let disabledTime = new Date().getTime() + disableDuration; 
     localStorage.setItem("disabledTime", disabledTime); 
     
