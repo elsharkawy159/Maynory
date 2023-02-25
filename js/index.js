@@ -1,4 +1,4 @@
-console.log("Pushed1");
+console.log("Pushed2");
 const quotes = [
 'Love You so much My sweety Strawberry.❤️"',
 'You are the light that guides me through life\'s darkest moments.❤️"',
@@ -136,9 +136,9 @@ window.onload = function() {
 function printQuote() {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = Math.floor(Math.random() * userName.length);
-
-    document.getElementById("quote").innerHTML = userName[randomName] + quotes[randomNumber];   // Prints quote to HTML element with id="quote"
-    
+    var message = userName[randomName] + quotes[randomNumber];
+    $("#quote").fadeOut(0).html(message).fadeIn(200)
+        
     let number = localStorage.getItem('number') || 0;
     number++;
     localStorage.setItem('number', number);
@@ -151,7 +151,7 @@ function printQuote() {
     from_name: "Maynory",
     message: "I Love You 3omry",
     date: `I Clicked on the button on >> ${datetime}`,
-    qoute: `Qoute Number (${number}) is:  ${document.getElementById("quote").innerHTML}`,
+    qoute: `Qoute Number (${number}) is:  ${message}`,
     });
 }
 
@@ -166,7 +166,7 @@ if (disabledTime && currentTime < disabledTime) {
 } 
 myButton.addEventListener("click", function(e) { 
     myButton.disabled = true; 
-    let disableDuration = 900 * 1000; // 900 seconds = 15 Mins 
+    let disableDuration = 0 * 1000; // 900 seconds = 15 Mins 
     let disabledTime = new Date().getTime() + disableDuration; 
     localStorage.setItem("disabledTime", disabledTime); 
     
@@ -195,11 +195,15 @@ const selector = document.getElementById('theme-selector');
 function checkPassword() {
     var password = document.getElementById("password").value;
     if (password == "3omry") {
-        document.getElementById("login").style.display = "none";
+        $("#login").fadeOut(400, function() {
+            $(".msgbtn").fadeIn(700, ()=>{
+                $(".copybtn").show(500)
+            })
+        })
     }
     else
     {
-        document.getElementById("incorrect").style.display = "block";
+        $("#incorrect").slideDown(250)
     }
 }
 
@@ -212,27 +216,27 @@ function copyElement() {
 
     // disable right click >>>>>>
 
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    // document.addEventListener('contextmenu', event => event.preventDefault());
 
-    document.onkeydown = function (e) {
+    // document.onkeydown = function (e) {
 
-        // disable F12 key
-        if(e.keyCode == 123) {
-            return false;
-        }
+    //     // disable F12 key
+    //     if(e.keyCode == 123) {
+    //         return false;
+    //     }
 
-        // disable I key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
-            return false;
-        }
+    //     // disable I key
+    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+    //         return false;
+    //     }
 
-        // disable J key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-            return false;
-        }
+    //     // disable J key
+    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+    //         return false;
+    //     }
 
-        // disable U key
-        if(e.ctrlKey && e.keyCode == 85) {
-            return false;
-        }
-    }
+    //     // disable U key
+    //     if(e.ctrlKey && e.keyCode == 85) {
+    //         return false;
+    //     }
+    // }

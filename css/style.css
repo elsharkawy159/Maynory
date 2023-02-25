@@ -8,7 +8,7 @@
     background: rgb(255, 255, 255);
   }
 h1 { 
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 600;
     font-family: 'Anton', sans-serif;
 }
@@ -18,31 +18,32 @@ h2 {
 }
 p {
     font-family: 'Solitreo', cursive;
-    /* background-color: hsla(0, 0%, 100%, 0.75); */
     background-image: linear-gradient(rgba(255, 213, 213, 0.907), rgba(255, 58, 58, 0.709));
-    transition: all 0.7s ease;
+    display: none;
     letter-spacing: 1px;
     cursor: default;
 }
+#quote {
+    transition: all 0.5s ease;
+}
 #theme-selector {
-    background-color: hsla(0, 0%, 0%, 0.1);
+    background-color: hsla(0, 0%, 0%, 0.12);
     color: #000000;
-    padding: 2px;
-    width: 10%;
+    padding: 0px;
   }
   body.light {
     background-color: #ffffff;
-    color: #000000;
+    color: hsla(0, 0%, 0%, 0.85);
   }
   body.dark {
     background-color: #000000;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.85);
   }
 p:hover {
     background-color: hsla(0, 100%, 50%, 0.15);
 }
 .bg {
-    background-image: url(../img/bg.jpg);
+    background-image: url(../img/bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -52,11 +53,11 @@ p:hover {
 
 .msgbtn {
     background-image: linear-gradient(to right, rgba(35, 35, 35, 0.31), #ff64643e);
+    display: none;
 
 }
 .password {
-    /* background-color: rgba(226, 226, 226, 0.97); */
-    background-image: url(../img/job297-ploy-17a-pink-01.jpg);
+    background-image: url(../img/loginbg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -81,6 +82,7 @@ p:hover {
     background-color: rgba(0, 0, 0, 0.1);
     border: 0;
     z-index: 9999;
+    display: none;
 }
 .copybtn:hover {
     background-color: rgba(0, 0, 0, 0.15);
@@ -114,14 +116,12 @@ p:hover {
     .carousel {
         display: block;
     }
-    .copybtn{
-        display: block !important;
-    }
     #theme-selector {
-        width: 100%;
+        width: 30%;
     }
     .msgbtn {
         background-color: #ff484869;
+        display: none;
     }
     .bg {
         height: 0px;
