@@ -171,7 +171,7 @@ function printQuote() {
     from_name: "Maynory",
     message: "I Love You 3omry",
     date: `I Clicked on the button on >> ${datetime}`,
-    qoute: `Qoute Number (${number}) is:  ${message} (NOT DISPLAYED)`,
+    qoute: `Qoute Number (${number}) is:  ${message}`,
     });
 }
 
