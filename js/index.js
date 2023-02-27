@@ -1,4 +1,4 @@
-console.log("Pushed2");
+console.log("Pushed3");
 const quotes = [
 'Love You so much My sweety Strawberry.❤️"',
 'You are the light that guides me through life\'s darkest moments.❤️"',
@@ -69,6 +69,23 @@ const quotes = [
 'You are the first one in the world you gave me the happiness."',
 'From my Deep heart, I love you and miss your smile."',
 'I need you to know that you are mine, and i\'m yours."',
+//New Messages
+'All I need in the world is your love."',
+'When I think about you.. I don\'t feel so alone."',
+'So many of my smiles begin with you."',
+'My \'Heart\' is always yours!."',
+'If your heart were a prison, I would like to be sentenced for a life."',
+'In life I need only you.❤️"',
+'You are my favorite reason to lose my sleep. (enty: tb3n.. omaal)"',
+'When I talk to you baby, I feel happy."',
+'My love is perfect, because you are inside."',
+'b7bk ya sbane5.❤️"',
+'For you.. Everything in the world can be done."',
+'Your cute smile is all I need to battle all struggles in my life."',
+'You are special for me in every way ."',
+'I love you in every universe."',
+'Your love makes my life worth to be lived."',
+'I love you more than I can express.❤️"',
 // In love with..
 'I am In love with your eyes."', 
 'I am In love with your smile.❤️"', 
@@ -113,6 +130,8 @@ const userName = [
     '"Rouhi❤️, ',
     '"Habibty❤️, ',
     '"3omry❤️, ',
+    '"7bebty, ',
+    '"Babe, ',
 ]
 
 let number = document.querySelector("#number")
@@ -137,7 +156,7 @@ function printQuote() {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = Math.floor(Math.random() * userName.length);
     var message = userName[randomName] + quotes[randomNumber];
-    $("#quote").fadeOut(0).html(message).fadeIn(200)
+    $("#quote").html(message).slideDown(500);
         
     let number = localStorage.getItem('number') || 0;
     number++;
@@ -166,7 +185,7 @@ if (disabledTime && currentTime < disabledTime) {
 } 
 myButton.addEventListener("click", function(e) { 
     myButton.disabled = true; 
-    let disableDuration = 900 * 1000; // 900 seconds = 15 Mins 
+    let disableDuration = 900 * 1000; // 900 seconds = 15 Mins //////////////////////////////////////////
     let disabledTime = new Date().getTime() + disableDuration; 
     localStorage.setItem("disabledTime", disabledTime); 
     
