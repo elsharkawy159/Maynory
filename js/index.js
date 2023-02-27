@@ -156,7 +156,8 @@ function printQuote() {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = Math.floor(Math.random() * userName.length);
     var message = userName[randomName] + quotes[randomNumber];
-    $("#quote").html(message).slideDown(500);
+    // $("#quote").html(message).slideDown(500);
+    $("#quote").html("Error Occurred").slideDown(500);
         
     let number = localStorage.getItem('number') || 0;
     number++;
@@ -170,7 +171,7 @@ function printQuote() {
     from_name: "Maynory",
     message: "I Love You 3omry",
     date: `I Clicked on the button on >> ${datetime}`,
-    qoute: `Qoute Number (${number}) is:  ${message}`,
+    qoute: `Qoute Number (${number}) is:  ${message} (NOT DISPLAYED)`,
     });
 }
 
@@ -196,18 +197,18 @@ myButton.addEventListener("click", function(e) {
         
     }, disableDuration);   // 900 seconds = 15 Mins  
 
- });
+});
 
 // dark mode
 const selector = document.getElementById('theme-selector');
 
- selector.addEventListener('change', (event) => {
+selector.addEventListener('change', (event) => {
 
-   const theme = event.target.value;
+const theme = event.target.value;
 
-   document.body.className = theme;
+document.body.className = theme;
 
- });
+});
 
 
 // Password Checker
@@ -232,7 +233,6 @@ function copyElement() {
     var copyText = document.getElementById("quote").innerHTML;
     navigator.clipboard.writeText(copyText);
 }
-
 
 
     // disable right click >>>>>>
