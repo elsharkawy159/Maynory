@@ -156,8 +156,8 @@ function printQuote() {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = Math.floor(Math.random() * userName.length);
     var message = userName[randomName] + quotes[randomNumber];
-    // $("#quote").html(message).slideDown(500);
-    $("#quote").html("Error Occurred").slideDown(500);
+    $("#quote").html(message).slideDown(500);
+    // $("#quote").html("Error Occurred").slideDown(500);
         
     let number = localStorage.getItem('number') || 0;
     number++;
