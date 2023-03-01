@@ -177,7 +177,7 @@ function printQuote() {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = Math.floor(Math.random() * userName.length);
     var message = userName[randomName] + quotes[randomNumber];
-    $("#quote").html(message).fadeIn(400);
+    $("#quote").html(message).fadeIn(500);
     // $("#quote").html("Error Occurred").slideDown(500);
     
     let number = localStorage.getItem('number') || 0;
@@ -240,7 +240,7 @@ function checkPassword() {
     if (password == "3omry") {
         $("#login").fadeOut(400, function() {
             $(".msgbtn").fadeIn(700, ()=>{
-                $(".copybtn").show(500)
+                $(".copybtn").slideDown(500)
             })
         })
     }
