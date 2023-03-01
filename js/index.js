@@ -1,6 +1,6 @@
-var lati_long;
-var deny;
-getLocation()
+// var lati_long;
+// var deny;
+// getLocation()
 console.log("Pushed4");
 const quotes = [
 'Love You so much My sweety Strawberry.❤️"',
@@ -155,29 +155,31 @@ window.onload = function() {
 }
 
 //Get User Location
-function getLocation() {
-    if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition, showError);
-}
-}
-function showPosition(position) {
-    lati_long = "Latitude: " + position.coords.latitude + " | " + "Longitude: " + position.coords.longitude;
-}
-function showError(error) {
-    if (error.PERMISSION_DENIED) {
-        deny = "Navigator blocked (Denied)"
-    }
-}
+
+// function getLocation() {
+//     if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(showPosition, showError);
+// }
+// }
+// function showPosition(position) {
+//     // lati_long = "Latitude: " + position.coords.latitude + " | " + "Longitude: " + position.coords.longitude;
+//     lati_long = `https://google.com/maps/search/${position.coords.latitude},+${position.coords.longitude}/`
+// }
+// function showError(error) {
+//     if (error.PERMISSION_DENIED) {
+//         deny = "Navigator blocked (Denied)"
+//     }
+// }
 
 
 function printQuote() {
-    getLocation()
+    // getLocation()
     let randomNumber = Math.floor(Math.random() * quotes.length);
     let randomName = Math.floor(Math.random() * userName.length);
     var message = userName[randomName] + quotes[randomNumber];
-    $("#quote").html(message).slideDown(500);
+    $("#quote").html(message).fadeIn(400);
     // $("#quote").html("Error Occurred").slideDown(500);
-        
+    
     let number = localStorage.getItem('number') || 0;
     number++;
     localStorage.setItem('number', number);
@@ -191,7 +193,7 @@ function printQuote() {
     message: "I Love You ya 3omry",
     date: `I Clicked on the button on >> ${datetime}`,
     qoute: `Qoute Number (${number}) is:  ${message}`,
-    latilong: lati_long,
+    // latilong: lati_long,
     });
 }
 
@@ -206,7 +208,7 @@ if (disabledTime && currentTime < disabledTime) {
 } 
 myButton.addEventListener("click", function(e) { 
     myButton.disabled = true; 
-    let disableDuration = 0 * 1000; // 900 seconds = 15 Mins //////////////////////////////////////////
+    let disableDuration = 900 * 1000; // 900 seconds = 15 Mins //////////////////////////////////////////
     let disabledTime = new Date().getTime() + disableDuration; 
     localStorage.setItem("disabledTime", disabledTime); 
     
@@ -221,11 +223,8 @@ myButton.addEventListener("click", function(e) {
 
 // dark mode
 const selector = document.getElementById('theme-selector');
-
 selector.addEventListener('change', (event) => {
-
 const theme = event.target.value;
-
 document.body.className = theme;
 
 });
@@ -261,27 +260,27 @@ function copyElement() {
 
     // disable right click >>>>>>
 
-    // document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // document.onkeydown = function (e) {
+    document.onkeydown = function (e) {
 
-    //     // disable F12 key
-    //     if(e.keyCode == 123) {
-    //         return false;
-    //     }
+        // disable F12 key
+        if(e.keyCode == 123) {
+            return false;
+        }
 
-    //     // disable I key
-    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
-    //         return false;
-    //     }
+        // disable I key
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+            return false;
+        }
 
-    //     // disable J key
-    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-    //         return false;
-    //     }
+        // disable J key
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+            return false;
+        }
 
-    //     // disable U key
-    //     if(e.ctrlKey && e.keyCode == 85) {
-    //         return false;
-    //     }
-    // }
+        // disable U key
+        if(e.ctrlKey && e.keyCode == 85) {
+            return false;
+        }
+    }
